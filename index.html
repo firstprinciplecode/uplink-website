@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Uplink - Localhost to public URL in seconds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/globe.gl"></script>
 </head>
@@ -13,29 +16,32 @@
 
   <!-- Overlay content -->
   <div class="overlay">
-    <header>
-      <h1>UPLINK</h1>
+    <!-- Top bar -->
+    <header class="top-bar">
+      <div class="logo">
+        <img class="logo-icon" src="logo.svg" alt="Uplink logo">
+        <span class="logo-text">Uplink</span>
+      </div>
+      
       <p class="tagline">Localhost to public URL in seconds.</p>
+      
+      <nav class="nav-links">
+        <a href="https://github.com/firstprinciplecode/uplink" target="_blank">Github</a>
+        <a href="https://www.npmjs.com/package/uplink-cli" target="_blank">NPM</a>
+        <a href="https://api.uplink.spot/health" target="_blank">Status</a>
+      </nav>
     </header>
 
-    <div class="center-content">
-      <div id="stats">
-        <span id="tunnel-count">0</span> active tunnels worldwide
+    <!-- Bottom bar -->
+    <footer class="bottom-bar">
+      <p class="copyright">Copyright 2025 @ All Rights Reserved</p>
+      
+      <div class="command" onclick="copyCommand()">
+        <span>npx uplink-cli</span>
       </div>
-    </div>
-
-    <div class="bottom-content">
-      <div class="cta">
-        <code>npx uplink-cli</code>
-        <button class="copy-btn" onclick="copyCommand()">Copy</button>
-      </div>
-
-      <footer>
-        <a href="https://github.com/firstprinciplecode/uplink">GitHub</a>
-        <span>•</span>
-        <a href="https://api.uplink.spot/health">Status</a>
-      </footer>
-    </div>
+      
+      <p class="tunnel-count"><span id="tunnel-count">0</span> Active Tunnels</p>
+    </footer>
   </div>
 
   <script src="app.js"></script>
