@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uplink - Localhost to public URL in seconds</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/globe.gl"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>UPLINK</h1>
+      <p class="tagline">Localhost to public URL in seconds.</p>
+    </header>
+
+    <div id="globe-container">
+      <div id="globe"></div>
+      <div id="stats">
+        <span id="tunnel-count">0</span> active tunnels worldwide
+      </div>
+    </div>
+
+    <div class="cta">
+      <code>npx uplink-cli</code>
+      <button class="copy-btn" onclick="copyCommand()">Copy</button>
+    </div>
+
+    <footer>
+      <a href="https://github.com/firstprinciplecode/uplink">GitHub</a>
+      <span>•</span>
+      <a href="https://api.uplink.spot/health">Status</a>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
