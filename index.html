@@ -8,29 +8,34 @@
   <script src="https://unpkg.com/globe.gl"></script>
 </head>
 <body>
-  <div class="container">
+  <!-- Fullscreen globe background -->
+  <div id="globe"></div>
+
+  <!-- Overlay content -->
+  <div class="overlay">
     <header>
       <h1>UPLINK</h1>
       <p class="tagline">Localhost to public URL in seconds.</p>
     </header>
 
-    <div id="globe-container">
-      <div id="globe"></div>
+    <div class="center-content">
       <div id="stats">
         <span id="tunnel-count">0</span> active tunnels worldwide
       </div>
     </div>
 
-    <div class="cta">
-      <code>npx uplink-cli</code>
-      <button class="copy-btn" onclick="copyCommand()">Copy</button>
-    </div>
+    <div class="bottom-content">
+      <div class="cta">
+        <code>npx uplink-cli</code>
+        <button class="copy-btn" onclick="copyCommand()">Copy</button>
+      </div>
 
-    <footer>
-      <a href="https://github.com/firstprinciplecode/uplink">GitHub</a>
-      <span>•</span>
-      <a href="https://api.uplink.spot/health">Status</a>
-    </footer>
+      <footer>
+        <a href="https://github.com/firstprinciplecode/uplink">GitHub</a>
+        <span>•</span>
+        <a href="https://api.uplink.spot/health">Status</a>
+      </footer>
+    </div>
   </div>
 
   <script src="app.js"></script>

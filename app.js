@@ -37,10 +37,9 @@ function initGlobe() {
 }
 
 function handleResize() {
-  const container = document.getElementById('globe-container');
-  if (globe && container) {
-    globe.width(container.clientWidth);
-    globe.height(container.clientHeight);
+  if (globe) {
+    globe.width(window.innerWidth);
+    globe.height(window.innerHeight);
   }
 }
 
