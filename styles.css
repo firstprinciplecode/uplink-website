@@ -190,15 +190,17 @@ body {
 
   .logo {
     justify-self: center;
+    order: -1;
   }
 
   .tagline {
-    order: -1;
+    order: 0;
   }
 
   .nav-links {
     justify-self: center;
     gap: 20px;
+    order: 1;
   }
 
   .bottom-bar {
