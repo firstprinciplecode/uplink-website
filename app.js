@@ -115,13 +115,46 @@ function copyCommand() {
   });
 }
 
+// Check API health status
+async function checkHealthStatus() {
+  const dot = document.getElementById('status-dot');
+  if (!dot) return;
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
+    const start = Date.now();
+    const response = await fetch(`${API_BASE}/health`, {
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+    const latency = Date.now() - start;
+
+    if (response.ok) {
+      // Green if healthy and fast (<500ms), yellow if slow
+      if (latency < 500) {
+        dot.className = 'status-dot green';
+      } else {
+        dot.className = 'status-dot yellow';
+      }
+    } else {
+      dot.className = 'status-dot red';
+    }
+  } catch (error) {
+    dot.className = 'status-dot red';
+  }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   initGlobe();
   fetchTunnelActivity();
+  checkHealthStatus();
   
   // Refresh data periodically
   setInterval(fetchTunnelActivity, REFRESH_INTERVAL);
+  setInterval(checkHealthStatus, 30000); // Check health every 30s
 });
 
 // Make copyCommand available globally
