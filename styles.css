@@ -60,19 +60,23 @@ body {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   justify-self: start;
 }
 
 .logo-icon {
-  width: 23px;
-  height: 26px;
+  width: 18px;
+  height: 21px;
 }
 
 .logo-text {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+.logo-text .u {
+  letter-spacing: -0.04em;
 }
 
 .tagline {
@@ -235,12 +239,12 @@ body {
   }
 
   .logo-icon {
-    width: 20px;
-    height: 23px;
+    width: 16px;
+    height: 19px;
   }
 
   .logo-text {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .tagline {
