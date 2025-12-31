@@ -105,11 +105,13 @@ function updateStats(count) {
 function copyCommand() {
   const command = 'npx uplink-cli';
   navigator.clipboard.writeText(command).then(() => {
-    const cmdEl = document.querySelector('.command');
-    cmdEl.classList.add('copied');
-    setTimeout(() => {
-      cmdEl.classList.remove('copied');
-    }, 2000);
+    const cmdEl = document.querySelector('.hero-command');
+    if (cmdEl) {
+      cmdEl.classList.add('copied');
+      setTimeout(() => {
+        cmdEl.classList.remove('copied');
+      }, 2000);
+    }
   }).catch(err => {
     console.error('Failed to copy:', err);
   });
