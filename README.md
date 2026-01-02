@@ -26,6 +26,20 @@ php -S localhost:8000
 
 Then open http://localhost:8000
 
+## Analytics (optional)
+
+### Google Analytics (GA4)
+
+- Create (or use) a GA4 property in Google Analytics and copy the **Measurement ID** (format: `G-XXXXXXXXXX`).
+- Add it to both `index.html` and `status.html`:
+
+  - Find: `<meta name="uplink-ga4-measurement-id" content="">`
+  - Set: `content="G-XXXXXXXXXX"`
+
+Notes:
+- The loader respects browser **Do Not Track**.
+- If you need a cookie-consent banner (EU/UK, etc.), say so and we’ll gate analytics until consent is granted.
+
 ## Deployment
 
 Copy files to server:
