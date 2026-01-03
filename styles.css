@@ -113,6 +113,30 @@ body {
   gap: 6px;
 }
 
+.tunnel-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-dim);
+  user-select: none;
+}
+
+.tunnel-icon {
+  color: var(--accent);
+}
+
+.tunnel-count-number {
+  color: var(--text);
+}
+
 .status-dot {
   width: 8px;
   height: 8px;
@@ -210,6 +234,24 @@ body {
   color: var(--text-dim);
 }
 
+.built-by {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.built-by:hover {
+  opacity: 0.7;
+}
+
+.built-by-brand {
+  color: var(--text);
+}
+
 /* Responsive - Tablet */
 @media (max-width: 768px) {
   .top-bar {
@@ -239,7 +281,7 @@ body {
     padding: 20px 16px;
   }
 
-  .tunnel-count {
+  .built-by {
     order: -1;
   }
 }
@@ -283,7 +325,12 @@ body {
   }
 
   .copyright,
-  .tunnel-count {
+  .built-by {
+    font-size: 11px;
+  }
+
+  .tunnel-indicator {
+    padding: 4px 8px;
     font-size: 11px;
   }
 }
